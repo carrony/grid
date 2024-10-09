@@ -193,3 +193,22 @@ body {
     transform: rotate(180deg); 
 }
 
+[data-numero] {
+    position:relative;
+}
+
+[data-numero]::before {
+    content: attr(data-numero) attr(data-palo);
+    font-size: 17px;
+    position: absolute;
+    top:4px;
+    left:4px;
+}
+
+[data-numero]::after {
+    content: attr(data-numero) attr(data-palo);
+    font-size: 17px;
+    position: absolute;
+    bottom:4px;
+    right:4px;
+}
