@@ -1,0 +1,195 @@
+html {
+    box-sizing: border-box;
+    font-size:40px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.tablero {
+    background-color: #38761d;
+    font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height:100vh;
+    padding:20px;
+}
+
+[data-palo="♠"],
+[data-palo="♣"] {
+    color: black;
+}
+
+[data-palo="♥"],
+[data-palo="♦"] {
+    color: red;
+}
+
+.carta {
+    width: 120px;
+    height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 18px 6px;
+}
+
+[data-numero="1"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+}
+
+[data-numero="2"], 
+[data-numero="3"] {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+[data-numero="4"],
+[data-numero="6"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: none;
+}
+
+.carta:nth-child(n+5) .icono:nth-child(1) {grid-area:i1}
+.carta:nth-child(n+5) .icono:nth-child(2) {grid-area:i2}
+.carta:nth-child(n+5) .icono:nth-child(3) {grid-area:i3}
+.carta:nth-child(n+5) .icono:nth-child(5) {grid-area:i5}
+.carta:nth-child(n+5) .icono:nth-child(4) {grid-area:i4}
+.carta:nth-child(n+5) .icono:nth-child(6) {grid-area:i6}
+.carta:nth-child(n+5) .icono:nth-child(7) {grid-area:i7}
+.carta:nth-child(n+5) .icono:nth-child(8) {grid-area:i8}
+.carta:nth-child(n+5) .icono:nth-child(9) {grid-area:i9}
+.carta:nth-child(n+5) .icono:nth-child(10) {grid-area:i10}
+
+[data-numero="5"] {
+    display: grid;
+    grid-template-areas: "i1 . i2"
+                         ".  i3  ."
+                         "i4 . i5";
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+} 
+
+[data-numero="6"] {
+    display: grid;
+    grid-template-areas: "i1 i2"
+                         "i3 i4"
+                         "i5 i6";
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+} 
+
+[data-numero="7"] {
+    display: grid;
+    grid-template-areas: "i1 . i2"
+                         "i4 . i5"
+                         "i6 . i7";
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    position:relative;
+} 
+[data-numero="7"] :nth-child(3) {
+    position: absolute;
+    top:50px;
+}
+
+[data-numero="8"] {
+    display: grid;
+    grid-template-areas: "i1 . i2"
+                         "i3 . i5"
+                         "i6 . i8";
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    position:relative;
+} 
+[data-numero="8"] :nth-child(4) {
+    position: absolute;
+    top:45px;
+}
+[data-numero="8"] :nth-child(7) {
+    position: absolute;
+    bottom:45px;
+}
+
+[data-numero="9"] {
+    display: grid;
+    grid-template-areas: "i1 . i2"
+                         "i4 . i5"
+                         "i6 . i7"
+                         "i8 . i9";
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    position:relative;
+    line-height: 0.5rem;
+} 
+[data-numero="9"] :nth-child(3) {
+    position: absolute;
+    top:50px;
+}
+
+[data-numero="10"] {
+    display: grid;
+    grid-template-areas: "i1 . i2"
+                         "i3 . i5"
+                         "i6 . i8"
+                         "i9 . i10";
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    position:relative;
+    line-height: 0.5rem;
+} 
+[data-numero="10"] :nth-child(4) {
+    position: absolute;
+    top:50px;
+}
+[data-numero="10"] :nth-child(7) {
+    position: absolute;
+    bottom:50px;
+}
+
+[data-numero="J"],
+[data-numero="Q"],
+[data-numero="K"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+
+[data-numero="J"] .icono,
+[data-numero="Q"] .icono,
+[data-numero="K"] .icono {
+     border: 2px solid lightgray;
+     padding:2px;
+     border-radius: 10px;;
+}
+
+[data-numero="2"] :nth-child(2),
+[data-numero="3"] :nth-child(3),
+[data-numero="4"] :nth-child(1n+3),
+[data-numero="5"] :nth-child(1n+4) ,
+[data-numero="6"] :nth-child(1n+5),
+[data-numero] :nth-child(1n+6){
+    transform: rotate(180deg); 
+}
+
