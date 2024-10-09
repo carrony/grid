@@ -1,0 +1,46 @@
+
+
+body {
+    margin: 0;
+    display: grid;
+    height:100vh;
+    grid-template-areas: "head head head"
+                         "izq ppal dcho "
+                         "pie pie pie"; 
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
+
+}
+
+nav {
+    background-color: #9e22ed;
+    grid-area:nav;
+}
+
+
+header {
+    background-color: #ffc9ff;
+    grid-area: head;
+}
+
+footer {
+    background-color: #b375d9;
+    grid-area: pie;
+}
+
+aside {
+    background-color: pink;
+}
+
+.izq {grid-area: izq}
+.dcho {grid-area: dcho}
+
+main  {
+    grid-area: ppal;
+}
+
+header, main, footer, aside, nav {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}

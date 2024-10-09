@@ -1,0 +1,26 @@
+
+body {
+    margin: 0;
+    display: grid;
+    height:100vh;
+    grid-template-rows: 1fr 6fr 1fr;
+}
+
+
+header {
+    background-color: #ffc9ff;
+}
+
+footer {
+    background-color: #b375d9;
+}
+
+header, main, footer {
+   /* display: flex;
+    justify-content: center;
+    align-items: center;*/
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}

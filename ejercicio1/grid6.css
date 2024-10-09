@@ -1,0 +1,39 @@
+
+
+body {
+    margin: 0;
+    display: grid;
+    height:100vh;
+    grid-template-areas: " head aside"
+                         " ppal aside"
+                         " pie aside"; 
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-columns: 6fr 1fr;
+
+}
+
+
+header {
+    background-color: #ffc9ff;
+    grid-area: head;
+}
+
+footer {
+    background-color: #b375d9;
+    grid-area: pie;
+}
+
+aside {
+    background-color: #9e22ed;
+    grid-area: aside;
+}
+
+main  {
+    grid-area: ppal;
+}
+
+header, main, footer, aside {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
